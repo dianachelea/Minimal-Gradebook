@@ -1,0 +1,52 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: diana
+      MYSQL_DATABASE: utilizator
+    ports:
+      - "3306:3306"
+    networks:
+      - my-app-network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-container
+    ports:
+      - "27017:27017"
+    networks:
+      - my-app-network
+
+  grpc-service:
+    build:
+      context: .
+    container_name: grpc-container
+    environment:
+      MYSQL_HOST: mysql-container
+      MYSQL_PORT: 3306
+      MYSQL_ROOT_PASSWORD: diana
+      MYSQL_DB: utilizator
+    ports:
+      - "50051:50051"
+    networks:
+      - my-app-network
+
+  rest-service:
+    build:
+      context: .
+    container_name: java-container
+    environment:
+      MONGO_URI: mongodb://mongodb-container:27017/mydb
+      GRPC_HOST: grpc-container
+      GRPC_PORT: 50051
+    ports:
+      - "8080:8080"
+    networks:
+      - my-app-network
+
+networks:
+  my-app-network:
+    driver: bridge
