@@ -27,7 +27,8 @@ const StudentDetailsPage = () => {
   }
 
   if (!student) return <p>Loading...</p>;
-
+  const notesMap = student.note || student.notes || {};
+  const notesEntries = Object.entries(notesMap);
   return (
     <div>
       <h1>
@@ -35,6 +36,27 @@ const StudentDetailsPage = () => {
       </h1>
       <p>Mean: {student.medie}</p>
       <p>Stage: {student.stare}</p>
+    <h2>Grades</h2>
+      {notesEntries.length === 0 ? (
+        <p>No grades yet.</p>
+  ) : (
+      <table>
+        <thead>
+          <tr>
+            <th>Discipline</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          {notesEntries.map(([discipline, grade]) => (
+            <tr key={discipline}>
+              <td>{discipline}</td>
+              <td>{grade}</td>
+            </tr>
+          ))}
+        </tbody>
+        </table>
+      )}
     </div>
   );
 };
