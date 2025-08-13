@@ -1,0 +1,17 @@
+Z:\an4\POS\S6\src\main\java\authenticate\AuthServiceGrpc.java
+Z:\an4\POS\S6\src\main\java\authenticate\AuthServiceOuterClass.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\controllers\AuthServiceClient.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\controllers\DisciplinaController.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\controllers\StudentController.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\data\Disciplina.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\data\stare.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\data\Student.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\dto\DisciplinaDto.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\dto\StudentDto.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\Main.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\mapper\IDisciplinaMapper.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\mapper\IStudentMapper.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\repository\DisciplinaRepository.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\repository\StudentRepository.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\services\DisciplinaService.java
+Z:\an4\POS\S6\src\main\java\com\pos\laborator\services\StudentService.java

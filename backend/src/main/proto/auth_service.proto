@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package authenticate;
+
+service AuthService{
+  rpc Authenticate (AuthRequest) returns (AuthResponse) {}
+  rpc Validate (ValidateRequest) returns (ValidateResponse) {}
+  rpc Invalidate (InvalidateRequest) returns (InvalidateResponse) {}
+}
+
+message AuthRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message AuthResponse {
+  string JWS=1;
+}
+
+message ValidateRequest {
+  string JWS=1;
+}
+
+message ValidateResponse {
+   string message=1;
+}
+
+message InvalidateRequest {
+  string JWS=1;
+}
+
+message InvalidateResponse {
+  string message=1;
+}
